@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
   s.name     = 'mixAudio'
-  s.version = "1.0.2"
+  s.version = "1.0.3"
   s.license  = 'MIT'
   s.summary  = 'mix audio'
   s.homepage = 'https://github.com/xc1050122035/MixAudio'
   s.social_media_url = 'http://weibo.com/in66com'
   s.authors  = { 'yangguang' => 'yangguang@in66.com' }
-               s.source   = { :git => 'https://github.com/xc1050122035/MixAudio.git',:tag => '1.0.2'}
+               s.source   = { :git => 'https://github.com/xc1050122035/MixAudio.git',:tag => '1.0.3'}
   s.requires_arc = true
 
   s.platform     = :ios

@@ -51,7 +51,8 @@
         [fileManager createDirectoryAtPath:voiceDocPath withIntermediateDirectories:YES attributes:nil error:nil];
     }
     //返回保存图片的路径（图片保存在ImageFile文件夹下）
-    NSString * voicePath = [[[voiceDocPath stringByAppendingPathComponent:voiceUrlOrName]stringByAppendingPathExtension:extensionType]stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]; 
+    NSString * voicePath;
+//    = [[[voiceDocPath stringByAppendingPathComponent:voiceUrlOrName]stringByAppendingPathExtension:extensionType]stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     return voicePath;
 }
 

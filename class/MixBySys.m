@@ -11,7 +11,7 @@
 #import "INVoicePlayerHelper.h"
 #import "DramaFileTool.h"
 #import "AudioConverter.h"
-@interface MixBySys ()<TPAACAudioConverterDelegate, TPAACAudioConverterDataSource>
+@interface MixBySys ()<TPAACAudioConverterDelegate>
 @property (nonatomic) AudioConverter *audioConverter;
 @property (nonatomic , strong) NSString * recordPath;
 @property (nonatomic , strong) NSString *voiceName;
@@ -43,7 +43,6 @@
 - (void)mixWithRecordPath:(NSString *)recordPath backMusicPath:(NSString *)backMusicPath userId:(NSString *)userId mixVolumeToRecord:(float)mixVolumeToRecord  mixVolumeTobackMusic:(float) mixVolumeTobackMusic com:(inCompletionMix)com;
 {
     _recordPath = recordPath;
-    __weak MixBySys *weakSelf = self;
     _comMixAndConverter = com;
     _mixVolumeToRecord = mixVolumeToRecord;
     _mixVolumeTobackMusic = mixVolumeTobackMusic;
@@ -53,7 +52,6 @@
 
     AVMutableComposition *composition = [AVMutableComposition composition];
     NSArray* tracks = [NSArray arrayWithObjects:recordPath, backMusicPath, nil];
-    NSString* audioFileType = @"mp3";
     
     
     AVURLAsset* audioAssetTime = [[AVURLAsset alloc]initWithURL:[NSURL fileURLWithPath:recordPath]options:nil];
